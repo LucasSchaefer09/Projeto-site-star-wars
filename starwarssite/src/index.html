@@ -263,15 +263,76 @@
          </div>
      </section>
      <section class="my-8">
-     <h2 class="section-title">
-      Screenshots
-     </h2>
-     <div class="grid grid-cols-2 gap-4">
-         <div class="card">
-          <img alt="Screenshot 1" height="400" src="https://lumiere-a.akamaihd.net/v1/images/sw-outlaws-gameplay-gallery-toshaal-space_d4f19539.jpeg" width="600" class="zoom"/>
-         </div>
-         <div class="card">
-          <img alt="Screenshot 2" height="400" src="https://lumiere-a.akamaihd.net/v1/images/sw-outlaws-gameplay-gallery-high-republic-cruiser_0561ede5.jpeg" width="600" class="zoom"/>
+      <h2 class="section-title">
+        Screenshots
+      </h2>
+      <div class="grid grid-cols-2 gap-4">
+        <div class="card">
+          <img alt="Screenshot 1" height="400" src="https://lumiere-a.akamaihd.net/v1/images/sw-outlaws-gameplay-gallery-toshaal-space_d4f19539.jpeg" width="600" class="zoom" data-src="https://lumiere-a.akamaihd.net/v1/images/sw-outlaws-gameplay-gallery-toshaal-space_d4f19539.jpeg"/>
+        </div>
+        <div class="card">
+          <img alt="Screenshot 2" height="400" src="https://lumiere-a.akamaihd.net/v1/images/sw-outlaws-gameplay-gallery-high-republic-cruiser_0561ede5.jpeg" width="600" class="zoom" data-src="https://lumiere-a.akamaihd.net/v1/images/sw-outlaws-gameplay-gallery-high-republic-cruiser_0561ede5.jpeg"/>
+        </div>
+      </div>
+    
+      <!-- Modal window for enlarged image -->
+      <div class="modal" id="image-modal">
+        <span class="btn-close-modal">&times;</span>
+        <img src="" alt="" class="modal-image">
+      </div>
+    </section>
+    
+    <style>
+      /* Add styles for modal window */
+      .modal {
+        display: none; /* hide modal by default */
+        position: fixed;
+        z-index: 1;
+        padding-top: 100px;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.9);
+      }
+    
+      .modal-image {
+        max-width: 100%;
+        height: auto;
+        margin: 0 auto;
+        display: block;
+      }
+    
+      .btn-close-modal {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 18px;
+        cursor: pointer;
+      }
+    </style>
+    
+    <script>
+      // Add event listener to images
+      const images = document.querySelectorAll('img.zoom');
+    
+      images.forEach((img) => {
+        img.addEventListener('click', () => {
+          const modal = document.getElementById('image-modal');
+          const modalImage = modal.querySelector('img.modal-image');
+          modalImage.src = img.getAttribute('data-src');
+          modal.style.display = 'block'; /* show modal window */
+        });
+      });
+    
+      // Add event listener to close button
+      const closeButton = document.querySelector('.btn-close-modal');
+      closeButton.addEventListener('click', () => {
+        const modal = document.getElementById('image-modal');
+        modal.style.display = 'none'; /* hide modal window */
+      });
+       </script>
          </div>
         </div>
     </section>

@@ -81,7 +81,7 @@
         }
    </style>
   </head>
-  <body>
+  <body class="bg-black">
    <header class="py-4 border-b border-gray-700">
     <div class="container mx-auto flex justify-between items-center">
      <div class="star-wars-logo">
@@ -148,7 +148,8 @@
        <p class="mb-4">
         Release Date: 2024
        </p>
-       <a class="text-yellow-500 hover:underline" href="https://www.ubisoft.com/pt-br/game/star-wars/outlaws">Learn More</a>
+       <a class="text-yellow-500 hover:underline" href="https://www.ubisoft.com/pt-br/game/star-wars/outlaws">
+        Learn More</a>
        </a>
       </div>
      </div>
@@ -179,8 +180,7 @@
       <h2 class="section-title">
         News &amp; Updates
       </h2>
-      <div class="bg-[#1a1a1a] p-4 rounded-lg transition duration-300 hover:scale-110 animate-spin">
-       <div class="grid grid-cols-4 gap-4">
+       <div class="grid text-white  grid-cols-4 gap-4">
         <div class="card hover:scale-110 hover:shadow-md transition duration-200 ease-in-out">
           <img alt="News image 1" height="400" src="https://lumiere-a.akamaihd.net/v1/images/star-wars-outlaws-key-art-horiz_512007c3.jpeg?region=1%2C0%2C1598%2C899" width="300"/>
           <div class="card-title">
@@ -284,7 +284,6 @@
         </div>
       </div>
     
-      <!-- Modal window for enlarged image -->
       <div class="modal" id="image-modal">
         <span class="btn-close-modal">&times;</span>
         <img src="" alt="" class="modal-image">
@@ -292,9 +291,9 @@
     </section>
     
     <style>
-      /* Add styles for modal window */
+    
       .modal {
-        display: none; /* hide modal by default */
+        display: none; 
         position: fixed;
         z-index: 1;
         padding-top: 100px;
@@ -323,7 +322,7 @@
     </style>
     
     <script>
-      // Add event listener to images
+     
       const images = document.querySelectorAll('img.zoom');
     
       images.forEach((img) => {
@@ -331,7 +330,7 @@
           const modal = document.getElementById('image-modal');
           const modalImage = modal.querySelector('img.modal-image');
           modalImage.src = img.getAttribute('data-src');
-          modal.style.display = 'block'; /* show modal window */
+          modal.style.display = 'block'; 
         });
       });
     
@@ -339,7 +338,7 @@
       const closeButton = document.querySelector('.btn-close-modal');
       closeButton.addEventListener('click', () => {
         const modal = document.getElementById('image-modal');
-        modal.style.display = 'none'; /* hide modal window */
+        modal.style.display = 'none'; 
       });
        </script>
          </div>
